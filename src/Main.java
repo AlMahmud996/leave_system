@@ -72,6 +72,35 @@ class Employee{
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Employee[] employees = new Employee[3];
+
+        for(int i = 0; i <3; i++){
+            System.out.println("Enter Employee" + (i + 1) + "Information ");
+
+            System.out.println("ID: ");
+            String id = sc.nextLine();
+
+            System.out.println("Name: ");
+            String name = sc.nextLine();
+
+            System.out.println("Date of Birth: ");
+            String dob = sc.nextLine();
+
+            System.out.println("Email: ");
+            String mail = sc.nextLine();
+
+            System.out.println("Employee Type (Officer / Staff): ");
+            String type = sc.nextLine();
+
+            System.out.println("Joining Date (Year-M-D): ");
+            String date = sc.nextLine();
+
+            LocalDate joiningDate = LocalDate.parse(date);
+            employees[i] =new Employee(id, name, dob, mail, type, joiningDate);
+        }
+        System.out.println("Employee Leave Details");
+
 
     }
 }
