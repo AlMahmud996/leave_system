@@ -8,19 +8,19 @@ class Employee{
     String name;
     String dob;
     String mail;
-    LocalDate joininDate;
+    LocalDate joiningDate;
     String type;
 
     int vacationLeave;
     int sickLeave;
 
-    public Employee(String id, String name, String dob, String mail, String type, LocalDate joininDate){
+    public Employee(String id, String name, String dob, String mail, String type, LocalDate joiningDate){
         this.id = id;
         this.name = name;
         this.dob = dob;
         this.mail = mail;
         this.type = type;
-        this.joininDate = joininDate;
+        this.joiningDate = joiningDate;
 
         calculateLeave();
     }
@@ -49,8 +49,26 @@ class Employee{
 
     }
 
+    int roundLeave(double value){
+        if(value - Math.floor(value) < 0.5)
+            return (int) Math.floor(value);
+        else
+            return (int) Math.ceil(value);
+    }
 
+    void display(){
+        System.out.println("Employee Details----");
+        System.out.println("ID: "+id);
+        System.out.println("Name: "+name);
+        System.out.println("Date of Birth: "+dob);
+        System.out.println("Email: "+mail);
+        System.out.println("Type: "+type);
+        System.out.println("Joining Date: "+joiningDate);
+        System.out.println("Vacation Leave: "+vacationLeave);
+        System.out.println("Sick Leave: "+sickLeave);
+    }
 }
+
 
 public class Main {
     public static void main(String[] args) {
