@@ -11,7 +11,7 @@ class Employee{
     LocalDate joininDate;
     String type;
 
-    int vacationalLeave;
+    int vacationLeave;
     int sickLeave;
 
     public Employee(String id, String name, String dob, String mail, String type, LocalDate joininDate){
@@ -37,8 +37,18 @@ class Employee{
             sickTotal = 7;
         }
 
+        int daysInYear = joiningDate.isLeapYear() ? 366: 365;
+        LocalDate endDate = LocalDate.of(2025, 12, 31);
+        long daysWorked = ChronoUnit.DAYS.between(joininDate, endDate)+1;
+
+        double vacationCalc = (daysWorked * vacationTotal) / (double) daysInYear;
+        double sickCalc = (daysWorked * sickTotal) / (double) daysInYear;
+
+        vacationLeave = roundLeave(vacationCalc);
+        sickLeave = roundLeave(sickCalc);
 
     }
+
 
 }
 
