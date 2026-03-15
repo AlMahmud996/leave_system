@@ -39,7 +39,7 @@ class Employee{
 
         int daysInYear = joiningDate.isLeapYear() ? 366: 365;
         LocalDate endDate = LocalDate.of(2025, 12, 31);
-        long daysWorked = ChronoUnit.DAYS.between(joininDate, endDate)+1;
+        long daysWorked = ChronoUnit.DAYS.between(joiningDate, endDate)+1;
 
         double vacationCalc = (daysWorked * vacationTotal) / (double) daysInYear;
         double sickCalc = (daysWorked * sickTotal) / (double) daysInYear;
@@ -76,7 +76,7 @@ public class Main {
         Employee[] employees = new Employee[3];
 
         for(int i = 0; i <3; i++){
-            System.out.println("Enter Employee" + (i + 1) + "Information ");
+            System.out.println("Enter Employee " + (i + 1) + " Information ");
 
             System.out.println("ID: ");
             String id = sc.nextLine();
