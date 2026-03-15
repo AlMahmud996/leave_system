@@ -101,6 +101,9 @@ public class Main {
         }
         System.out.println("Employee Leave Details");
 
-
+        for(Employee e : employees){
+            e.display();
+        }
+        sc.close();
     }
 }
